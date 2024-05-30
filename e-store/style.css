@@ -31,7 +31,7 @@ html {
   color: var(--textColor);
 }
 
-/* have a look into body once after we done with rest of the styling  */
+
 body {
   margin: 0 auto;
   padding: 0 32px;
@@ -85,7 +85,6 @@ a {
   font-weight: 400;
 }
 
-/*! layout */
 .container {
   max-width: 142rem;
   margin: 0 auto;
@@ -129,7 +128,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
 }
 
-/*! module / reusable  */
+
 
 .btn {
   display: inline-block;
@@ -149,7 +148,7 @@ a {
   margin: 2.4rem 0 1.2rem 0;
 }
 
-/* states  */
+
 
 .btn:hover {
   background-color: var(--bnt-hover-bg-color);
@@ -163,7 +162,7 @@ textarea:focus-visible {
   outline: 2px solid var(--para-color);
 }
 
-/** CSS for toast notifications */
+
 .toast {
   position: fixed;
   top: 2rem;
@@ -276,8 +275,6 @@ textarea:focus-visible {
   }
 }
 
-/***** Navbar End Section *****/
-
 /***** Hero Section *****/
 
 main {
@@ -360,7 +357,6 @@ main .section-hero {
   transform: scaleX(-1);
 }
 
-/***** End Hero Section *****/
 
 /***** Extra Section *****/
 .div-extra {
@@ -450,7 +446,6 @@ main .section-hero {
   -o-border-radius: 0.5rem;
 }
 
-/***** End Extra Div Section *****/
 
 /***** Policy Section *****/
 
@@ -487,7 +482,6 @@ main .section-hero {
   }
 }
 
-/***** End Policy Section *****/
 
 /***** why choose Section *****/
 
@@ -609,7 +603,6 @@ main .section-hero {
   height: auto;
 }
 
-/***** End why choose Section *****/
 
 /***** Start contact Section *****/
 
@@ -654,7 +647,6 @@ textarea {
   text-transform: capitalize;
 }
 
-/***** End contact Section *****/
 
 /***** Start Footer Section *****/
 footer {
@@ -731,7 +723,6 @@ footer {
   color: var(--secondaryColor);
 }
 
-/***** End Footer Section *****/
 
 /**** Our Home product section  Starts ***/
 #productContainer {
@@ -848,7 +839,7 @@ footer {
     font-weight: bold;
   }
 }
-/**** Our Home product section Ends  ****/
+
 
 #cartValue {
   background-color: var(--buttonColor);
@@ -989,11 +980,9 @@ footer {
   }
 }
 
-/*****  Add to Cart page ends *****/
 
 /*****  media queries Section *****/
 
-/* https://getbootstrap.com/docs/5.0/layout/breakpoints/ */
 
 @media (width <= 1380px) {
   html {
@@ -1217,4 +1206,3 @@ footer {
     padding: 6.4rem 0rem 2.4rem 0rem;
   }
 }
-/***** End  media queries Section *****/
