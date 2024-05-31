@@ -3,6 +3,8 @@ export const getCartProductFromLS = () => {
     if(!cartProduct){
         return [];
     }
+    else{
     cartProduct = JSON.parse(cartProduct);
     return cartProduct;
+    }
 }

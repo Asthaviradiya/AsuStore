@@ -5,5 +5,10 @@ export const addToCart = (event,id,stock) => {
     let quantity = currProdElem.querySelector(".productQuantity").innerText;
     let price = currProdElem.querySelector(".productPrice").innerText;
 
+    price = price.replace("₹", "");
+    price = Number(price*quantity);
+    quantity = Number(quantity);
 
+    arrlocalStorageProduct.push({id,quantity,price});
+    localStorage.setItem("cartProductLS",JSON.stringify(arrlocalStorageProduct));
 }
