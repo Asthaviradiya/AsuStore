@@ -1,3 +1,4 @@
+import { updateCartVal } from "./updateCartVal";
 import { getCartProductFromLS } from "./getCartProductFromLS";
 export const addToCart = (event,id,stock) => {
     let arrlocalStorageProduct = getCartProductFromLS();
@@ -11,4 +12,6 @@ export const addToCart = (event,id,stock) => {
 
     arrlocalStorageProduct.push({id,quantity,price});
     localStorage.setItem("cartProductLS",JSON.stringify(arrlocalStorageProduct));
+
+    updateCartVal(arrlocalStorageProduct);
 }
