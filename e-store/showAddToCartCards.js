@@ -3,7 +3,7 @@ import { fetchQuantityFromCartLS } from "./fetchQuantityFromCartLS";
 import { getCartProductFromLS } from "./getCartProducts";
 import { incrementDecrement } from "./incrementDecrement";
 import { removeProdFromCart } from "./removeProdFromCart";
-import { updateCartProductTotal } from "./updateCartProductTotal";
+// import { updateCartProductTotal } from "./updateCartProductTotal";
 
 let cartProducts = getCartProductFromLS();
 
