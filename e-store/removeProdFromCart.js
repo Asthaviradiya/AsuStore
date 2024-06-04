@@ -21,5 +21,5 @@ export const removeProdFromCart = (id) => {
 
   updateCartProductTotal();
 
-  updateCartValue(cartProducts);
+  updateCartVal(cartProducts);
 };
