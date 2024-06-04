@@ -1,5 +1,5 @@
 
-import { getCartProductFromLS } from "./getCartProducts";
+import { getCartProductFromLS } from "./getCartProductFromLS";
 import { updateCartProductTotal } from "./updateCartProductTotal";
 
 export const incrementDecrement = (event, id, stock, price) => {
