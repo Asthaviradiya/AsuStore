@@ -1,38 +1,63 @@
-import { updateCartVal } from "./updateCartVal";
-import { getCartProductFromLS } from "./getCartProductFromLS";
-export const addToCart = (event,id,stock) => {
-    let arrlocalStorageProduct = getCartProductFromLS();
 
-    const currProdElem = document.querySelector(`#card${id}`);
-    let quantity = currProdElem.querySelector(".productQuantity").innerText;
-    let price = currProdElem.querySelector(".productPrice").innerText;
+import { getCartProductFromLS } from "./getCartProducts";
+import { showToast } from "./showToast";
+import { updateCartValue } from "./updateCartValue";
 
-    price = price.replace("₹", "");
+// -----------------------------------------------------
+// to get the cart data from localStorage
+// to update the cart value and also to get the data always ready from localStorage
+// --------------------------------------------------------
+getCartProductFromLS();
 
-    let existingProd = arrlocalStorageProduct.find((currprod) => currprod.id === id);
+// -----------------------------------------------------
+// to add the data into localStorage
+// --------------------------------------------------------
+export const addToCart = (event, id, stock) => {
+  let arrLocalStorageProduct = getCartProductFromLS();
 
-    if(existingProd && quantity > 1){
-        quantity = Number(quantity)+Number(existingProd.quantity);
-        price = Number(price*quantity);
-        let updatedcart = {id,quantity,price};
-        updatedcart = arrlocalStorageProduct.map((currprod) => {
-            return currprod.id == id ? updatedcart : currprod;
-        })
-        localStorage.setItem("cartProductLS",JSON.stringify(updatedcart));
+  const currentProdElem = document.querySelector(`#card${id}`);
+  let quantity = currentProdElem.querySelector(".productQuantity").innerText;
+  let price = currentProdElem.querySelector(".productPrice").innerText;
+  //   console.log(quantity, price);
+  price = price.replace("₹", "");
 
-        
+  let existingProd = arrLocalStorageProduct.find(
+    (curProd) => curProd.id === id
+  );
 
-    }
-    if(existingProd){
-        
-        return false;
-    }
-    price = Number(price*quantity);
-    quantity = Number(quantity);
+  console.log(existingProd);
 
-    arrlocalStorageProduct.push({id,quantity,price});
-    localStorage.setItem("cartProductLS",JSON.stringify(arrlocalStorageProduct));
+  if (existingProd && quantity > 1) {
+    quantity = Number(existingProd.quantity) + Number(quantity);
+    price = Number(price * quantity);
+    let updatedCart = { id, quantity, price };
 
-    updateCartVal(arrlocalStorageProduct);
+    updatedCart = arrLocalStorageProduct.map((curProd) => {
+      return curProd.id === id ? updatedCart : curProd;
+    });
+    console.log(updatedCart);
+
+    localStorage.setItem("cartProductLS", JSON.stringify(updatedCart));
+    //show toast when product added to the cart
     showToast("add", id);
-}
+  }
+
+  if (existingProd) {
+    // alert("bhai duplicate hai");
+    return false;
+  }
+
+  //todo Don't Forget To LIKE SHARE & SUBSCRIBE TO THAPA TECHNCIAL YOUTUBE CHANNEL 👉 https://www.youtube.com/thapatechnical
+
+  price = Number(price * quantity);
+  quantity = Number(quantity);
+
+  arrLocalStorageProduct.push({ id, quantity, price });
+  localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct));
+
+  //update the cart button value
+  updateCartValue(arrLocalStorageProduct);
+
+  //show toast when product added to the cart
+  showToast("add", id);
+};

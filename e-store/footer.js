@@ -1,16 +1,18 @@
+
 const footerHTML = `
-<footer class="section-footer">
-<div class="footer-container container">
-<div class="content_1">
-<img src="./images/logo.png" alt="logo" />
-<p>
-Welcome to Thapa EcomStore, <br />
-your ultimate destination for
-<br />
-cutting-edge gadgets!
-</p>
-<img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
-div class="content_2">
+  <footer class="section-footer">
+    <div class="footer-container container">
+      <div class="content_1">
+        <img src="./images/logo.png" alt="logo" />
+        <p>
+          Welcome to Thapa EcomStore, <br />
+          your ultimate destination for
+          <br />
+          cutting-edge gadgets!
+        </p>
+        <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
+      </div>
+      <div class="content_2">
         <h4>SHOPPING</h4>
         <a href="#">Computer Store</a>
         <a href="#">Laptop Store</a>
@@ -44,6 +46,6 @@ div class="content_2">
       </div>
     </div>
   </footer>`;
-  
+
 const footerElem = document.querySelector(".section-footer");
 footerElem.insertAdjacentHTML("afterbegin", footerHTML);

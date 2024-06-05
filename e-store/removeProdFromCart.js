@@ -1,7 +1,7 @@
-import { getCartProductFromLS } from "./getCartProductFromLS";
+import { getCartProductFromLS } from "./getCartProducts";
 import { showToast } from "./showToast";
 import { updateCartProductTotal } from "./updateCartProductTotal";
-import { updateCartVal } from "./updateCartVal";
+import { updateCartValue } from "./updateCartValue";
 
 export const removeProdFromCart = (id) => {
   let cartProducts = getCartProductFromLS();
@@ -10,7 +10,7 @@ export const removeProdFromCart = (id) => {
   // update the localStorage after removing the item
   localStorage.setItem("cartProductLS", JSON.stringify(cartProducts));
 
-  //   to remove the div onclick  
+  //   to remove the div onclick
   let removeDiv = document.getElementById(`card${id}`);
   if (removeDiv) {
     removeDiv.remove();
@@ -19,7 +19,10 @@ export const removeProdFromCart = (id) => {
     showToast("delete", id);
   }
 
+  // -----------------------------------------------------
+  // calculating the card total in our cartProducts page
+  // --------------------------------------------------------
   updateCartProductTotal();
 
-  updateCartVal(cartProducts);
+  updateCartValue(cartProducts);
 };
